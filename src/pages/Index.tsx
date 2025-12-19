@@ -5,8 +5,10 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Icon from '@/components/ui/icon';
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState('home');
   const [loanAmount, setLoanAmount] = useState(100000);
   const [loanTerm, setLoanTerm] = useState(12);
@@ -65,7 +67,7 @@ const Index = () => {
               </button>
             ))}
           </div>
-          <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+          <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90" onClick={() => navigate('/login')}>
             Личный кабинет
             <Icon name="ArrowRight" size={16} />
           </Button>
@@ -86,7 +88,7 @@ const Index = () => {
               Получайте кэшбэк до 30%, инвестируйте с умом и управляйте финансами в одном приложении
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-secondary hover:scale-105 transition-transform">
+              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-secondary hover:scale-105 transition-transform" onClick={() => navigate('/download')}>
                 <Icon name="Download" size={20} />
                 Скачать приложение
               </Button>
