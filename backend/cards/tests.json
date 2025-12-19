@@ -1,0 +1,31 @@
+{
+  "tests": [
+    {
+      "name": "Get user cards",
+      "method": "GET",
+      "path": "/?user_id=1",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "cards": "array"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create new card",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "user_id": 1,
+        "first_name": "Иван",
+        "last_name": "Петров",
+        "card_type": "premium"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "card_number": "string",
+        "balance": "number"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

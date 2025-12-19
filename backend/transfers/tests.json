@@ -1,0 +1,31 @@
+{
+  "tests": [
+    {
+      "name": "Get transactions history",
+      "method": "GET",
+      "path": "/?card_id=1",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "transactions": "array"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Make transfer",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "from_card_id": 1,
+        "to_phone": "79243544027",
+        "amount": 100,
+        "description": "Test transfer"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "transaction_id": "number"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "tests": [
+    {
+      "name": "Get user tariff",
+      "method": "GET",
+      "path": "/?user_id=1",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "tariff_name": "string",
+        "price": "number"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Subscribe to tariff",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "user_id": 1,
+        "card_id": 1,
+        "tariff_name": "Премиум",
+        "price": 299
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "tariff_name": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

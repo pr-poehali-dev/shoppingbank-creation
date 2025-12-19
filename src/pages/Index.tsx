@@ -92,7 +92,7 @@ const Index = () => {
                 <Icon name="Download" size={20} />
                 Скачать приложение
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 hover:scale-105 transition-transform">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 hover:scale-105 transition-transform" onClick={() => navigate('/video')}>
                 <Icon name="Play" size={20} />
                 Смотреть видео
               </Button>
@@ -283,7 +283,7 @@ const Index = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-xl font-semibold mb-2">8 800 555-35-35</p>
+                  <p className="text-xl font-semibold mb-2">+7 924 354-40-27</p>
                   <p className="text-muted-foreground">Бесплатно по России, 24/7</p>
                 </CardContent>
               </Card>
@@ -297,7 +297,7 @@ const Index = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-xl font-semibold mb-2">info@shoppingbank.ru</p>
+                  <p className="text-xl font-semibold mb-2">ujhleq@yandex.ru</p>
                   <p className="text-muted-foreground">Ответим в течение часа</p>
                 </CardContent>
               </Card>
@@ -337,10 +337,10 @@ const Index = () => {
               <span className="text-xl font-bold">ShoppingBank</span>
             </div>
             <div className="flex gap-6 text-muted-foreground">
-              <a href="#" className="hover:text-primary transition-colors">О банке</a>
-              <a href="#" className="hover:text-primary transition-colors">Вакансии</a>
-              <a href="#" className="hover:text-primary transition-colors">Пресс-центр</a>
-              <a href="#" className="hover:text-primary transition-colors">Помощь</a>
+              <a href="#about" className="hover:text-primary transition-colors">О банке</a>
+              <button onClick={() => navigate('/terms')} className="hover:text-primary transition-colors">Соглашение</button>
+              <button onClick={() => navigate('/privacy')} className="hover:text-primary transition-colors">Политика</button>
+              <a href="#contacts" className="hover:text-primary transition-colors">Помощь</a>
             </div>
             <div className="flex gap-4">
               {['Instagram', 'Facebook', 'Twitter'].map((social) => (
